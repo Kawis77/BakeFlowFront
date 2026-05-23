@@ -9,6 +9,16 @@
     "es": "Espanol",
     "uk": "Ucraniano"
   },
+  "nav": {
+    "dashboard": "Panel",
+    "orders": "Pedidos",
+    "products": "Productos",
+    "recipes": "Recetas",
+    "ingredients": "Ingredientes",
+    "extraItems": "Extras",
+    "reports": "Reportes",
+    "settings": "Configuracion"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -37,6 +47,17 @@
       "genericError": "El inicio de sesion fallo. Intentalo de nuevo.",
       "noAccount": "No tienes una cuenta?",
       "createAccount": "Crear cuenta"
+    }
+  },
+  "dashboard": {
+    "title": "Panel",
+    "placeholder": "Bienvenido a BakeFlow. Esta area esta lista para tus widgets y modulos de negocio.",
+    "header": {
+      "theme": "Tema",
+      "logout": "Cerrar sesion",
+      "profile": "Perfil",
+      "user": "Usuario",
+      "workspace": "Espacio"
     }
   }
 }

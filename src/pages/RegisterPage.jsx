@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { register } from '../lib/api'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 
@@ -13,6 +13,7 @@ const initialForm = {
 
 function RegisterPage() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const [form, setForm] = useState(initialForm)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -46,6 +47,7 @@ function RegisterPage() {
       localStorage.setItem('refreshToken', data.refreshToken)
       setSuccess(t('auth.register.success'))
       setForm(initialForm)
+      navigate('/dashboard', { replace: true })
     } catch (err) {
       const message = err?.response?.data?.message ?? t('auth.register.genericError')
       setError(message)
