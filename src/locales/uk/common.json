@@ -9,6 +9,16 @@
     "es": "Ispanska",
     "uk": "Ukrayinska"
   },
+  "nav": {
+    "dashboard": "Panel",
+    "orders": "Zamovlennya",
+    "products": "Produkty",
+    "recipes": "Retsepty",
+    "ingredients": "Ingrediyenty",
+    "extraItems": "Dodatkovi elementy",
+    "reports": "Zvity",
+    "settings": "Nalashtuvannya"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -37,6 +47,17 @@
       "genericError": "Pomylka vhodu. Sprobuyte znovu.",
       "noAccount": "Nemaye akauntu?",
       "createAccount": "Stvoryty akaunt"
+    }
+  },
+  "dashboard": {
+    "title": "Panel",
+    "placeholder": "Laskavo prosymo do BakeFlow. Tut gotove mistse dlya vidzhetiv i biznes-moduliv.",
+    "header": {
+      "theme": "Tema",
+      "logout": "Vyity",
+      "profile": "Profil",
+      "user": "Korystuvach",
+      "workspace": "Robochyy prostir"
     }
   }
 }

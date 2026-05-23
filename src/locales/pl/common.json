@@ -9,6 +9,16 @@
     "es": "Hiszpanski",
     "uk": "Ukrainski"
   },
+  "nav": {
+    "dashboard": "Dashboard",
+    "orders": "Zamowienia",
+    "products": "Produkty",
+    "recipes": "Receptury",
+    "ingredients": "Skladniki",
+    "extraItems": "Dodatki",
+    "reports": "Raporty",
+    "settings": "Ustawienia"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -37,6 +47,17 @@
       "genericError": "Logowanie nie powiodlo sie. Sprobuj ponownie.",
       "noAccount": "Nie masz konta?",
       "createAccount": "Utworz konto"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "placeholder": "Witaj w BakeFlow. Tutaj pojawia sie widgety i moduly biznesowe.",
+    "header": {
+      "theme": "Motyw",
+      "logout": "Wyloguj",
+      "profile": "Profil",
+      "user": "Uzytkownik",
+      "workspace": "Workspace"
     }
   }
 }
