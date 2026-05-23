@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "BakeFlow"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "pl": "Polish",
+    "es": "Spanish",
+    "uk": "Ukrainian"
+  },
+  "auth": {
+    "register": {
+      "badge": "BakeFlow",
+      "title": "Create your bakery account",
+      "subtitle": "Start your workspace and manage products, costs, and orders.",
+      "username": "Username",
+      "companyName": "Company name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "success": "Account created successfully. You are now signed in.",
+      "genericError": "Registration failed. Please try again.",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "login": {
+      "badge": "BakeFlow",
+      "title": "Sign in to your bakery workspace",
+      "subtitle": "Access orders, costs, and production planning.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "success": "Signed in successfully.",
+      "genericError": "Login failed. Please try again.",
+      "noAccount": "Do not have an account?",
+      "createAccount": "Create account"
+    }
+  }
+}

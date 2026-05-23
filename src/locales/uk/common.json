@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "BakeFlow"
+  },
+  "language": {
+    "label": "Mova",
+    "en": "Angliyska",
+    "pl": "Polska",
+    "es": "Ispanska",
+    "uk": "Ukrayinska"
+  },
+  "auth": {
+    "register": {
+      "badge": "BakeFlow",
+      "title": "Stvorit akaunt pekarni",
+      "subtitle": "Pochni robotu ta keruy produktamy, vytratamy i zamovlennyamy.",
+      "username": "Imya korystuvacha",
+      "companyName": "Nazva kompanii",
+      "email": "Email",
+      "password": "Parol",
+      "submit": "Stvoryty akaunt",
+      "submitting": "Stvoryuetsya akaunt...",
+      "success": "Akaunt uspishno stvoreno. Vy uviishly.",
+      "genericError": "Reyestratsiya ne vdalasya. Sprobuyte znovu.",
+      "haveAccount": "Vzhe mayete akaunt?",
+      "signIn": "Uviyty"
+    },
+    "login": {
+      "badge": "BakeFlow",
+      "title": "Uviydit do robochogo prostoru pekarni",
+      "subtitle": "Otrymujte dostup do zamovlen, vytrat i planuvannya vyrobnytstva.",
+      "email": "Email",
+      "password": "Parol",
+      "submit": "Uviyty",
+      "submitting": "Vhid...",
+      "success": "Vhid vykonano uspishno.",
+      "genericError": "Pomylka vhodu. Sprobuyte znovu.",
+      "noAccount": "Nemaye akauntu?",
+      "createAccount": "Stvoryty akaunt"
+    }
+  }
+}

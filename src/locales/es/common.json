@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "BakeFlow"
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "Ingles",
+    "pl": "Polaco",
+    "es": "Espanol",
+    "uk": "Ucraniano"
+  },
+  "auth": {
+    "register": {
+      "badge": "BakeFlow",
+      "title": "Crea tu cuenta de pasteleria",
+      "subtitle": "Inicia tu espacio de trabajo y gestiona productos, costos y pedidos.",
+      "username": "Nombre de usuario",
+      "companyName": "Nombre de la empresa",
+      "email": "Correo electronico",
+      "password": "Contrasena",
+      "submit": "Crear cuenta",
+      "submitting": "Creando cuenta...",
+      "success": "Cuenta creada correctamente. Has iniciado sesion.",
+      "genericError": "El registro fallo. Intentalo de nuevo.",
+      "haveAccount": "Ya tienes una cuenta?",
+      "signIn": "Iniciar sesion"
+    },
+    "login": {
+      "badge": "BakeFlow",
+      "title": "Inicia sesion en tu espacio de pasteleria",
+      "subtitle": "Accede a pedidos, costos y planificacion de produccion.",
+      "email": "Correo electronico",
+      "password": "Contrasena",
+      "submit": "Iniciar sesion",
+      "submitting": "Iniciando sesion...",
+      "success": "Sesion iniciada correctamente.",
+      "genericError": "El inicio de sesion fallo. Intentalo de nuevo.",
+      "noAccount": "No tienes una cuenta?",
+      "createAccount": "Crear cuenta"
+    }
+  }
+}

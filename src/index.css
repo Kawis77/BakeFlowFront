@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  --bg-page: linear-gradient(180deg, #f8fbff 0%, #f2f7fd 55%, #eef4fb 100%);
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-border: rgba(148, 163, 184, 0.32);
+  --surface-shadow: 0 20px 40px -28px rgba(15, 23, 42, 0.22);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent: #0f6cbd;
+  --input-border: rgba(148, 163, 184, 0.55);
+  --input-focus: #0f6cbd;
+  --input-ring: rgba(14, 116, 204, 0.2);
+  --button-bg: #0f6cbd;
+  --button-bg-hover: #115ea3;
+  --button-text: #ffffff;
+  --radius-lg: 1rem;
+  --radius-md: 0.65rem;
+
+  color: var(--text-primary);
+  background-color: #fff;
+}
+
+:root[data-theme="ocean"] {
+  --bg-page: linear-gradient(180deg, #f0fbff 0%, #e6f6ff 55%, #dff2ff 100%);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-border: rgba(125, 211, 252, 0.6);
+  --surface-shadow: 0 20px 40px -26px rgba(2, 132, 199, 0.24);
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
+  --accent: #0369a1;
+  --input-border: rgba(125, 211, 252, 0.7);
+  --input-focus: #0284c7;
+  --input-ring: rgba(2, 132, 199, 0.2);
+  --button-bg: #0369a1;
+  --button-bg-hover: #075985;
+  --button-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@layer components {
+  .page-bg {
+    background: var(--bg-page);
+  }
+
+  .surface-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--surface-shadow);
+    backdrop-filter: blur(8px);
+  }
+
+  .text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .input-field {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--input-border);
+    padding: 0.5rem 0.75rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.15s ease;
+  }
+
+  .input-field:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px var(--input-ring);
+  }
+
+  .primary-btn {
+    width: 100%;
+    border-radius: var(--radius-md);
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background 0.15s ease;
+  }
+
+  .primary-btn:hover {
+    background: var(--button-bg-hover);
+  }
+
+  .primary-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

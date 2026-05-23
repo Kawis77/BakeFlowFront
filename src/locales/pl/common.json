@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "BakeFlow"
+  },
+  "language": {
+    "label": "Jezyk",
+    "en": "Angielski",
+    "pl": "Polski",
+    "es": "Hiszpanski",
+    "uk": "Ukrainski"
+  },
+  "auth": {
+    "register": {
+      "badge": "BakeFlow",
+      "title": "Utworz konto cukierni",
+      "subtitle": "Rozpocznij prace i zarzadzaj produktami, kosztami oraz zamowieniami.",
+      "username": "Nazwa uzytkownika",
+      "companyName": "Nazwa firmy",
+      "email": "Email",
+      "password": "Haslo",
+      "submit": "Utworz konto",
+      "submitting": "Tworzenie konta...",
+      "success": "Konto zostalo utworzone. Jestes teraz zalogowany.",
+      "genericError": "Rejestracja nie powiodla sie. Sprobuj ponownie.",
+      "haveAccount": "Masz juz konto?",
+      "signIn": "Zaloguj sie"
+    },
+    "login": {
+      "badge": "BakeFlow",
+      "title": "Zaloguj sie do panelu cukierni",
+      "subtitle": "Uzyskaj dostep do zamowien, kosztow i planowania produkcji.",
+      "email": "Email",
+      "password": "Haslo",
+      "submit": "Zaloguj sie",
+      "submitting": "Logowanie...",
+      "success": "Zalogowano pomyslnie.",
+      "genericError": "Logowanie nie powiodlo sie. Sprobuj ponownie.",
+      "noAccount": "Nie masz konta?",
+      "createAccount": "Utworz konto"
+    }
+  }
+}
