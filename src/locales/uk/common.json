@@ -59,5 +59,157 @@
       "user": "Korystuvach",
       "workspace": "Robochyy prostir"
     }
+  },
+  "ingredients": {
+    "title": "Ingrediyenty",
+    "subtitle": "Keruyte bazoyu ingrediyentiv ta danymy shchodo vytrat.",
+    "searchPlaceholder": "Poshuk za nazvoyu ingrediyenta...",
+    "addButton": "Dodaty ingrediyent",
+    "loading": "Zavantazhennya ingrediyentiv...",
+    "empty": "Ingrediyenty ne znaydeno.",
+    "errors": {
+      "loadFailed": "Ne vdalosya zavantazhyty ingrediyenty.",
+      "deleteFailed": "Ne vdalosya vydalyty ingrediyent.",
+      "createFailed": "Ne vdalosya stvoryty ingrediyent.",
+      "updateFailed": "Ne vdalosya onovyty ingrediyent."
+    },
+    "columns": {
+      "name": "Nazva",
+      "packageUnit": "Odyynytsya pakuvannya",
+      "packageQuantity": "Kilkist u paketi",
+      "packagePrice": "Tsina paketu",
+      "baseUnit": "Bazova odynytsya",
+      "unitPrice": "Tsina odynytsi",
+      "actions": "Diyi"
+    },
+    "actions": {
+      "label": "Keruvaty",
+      "edit": "Redahuvaty",
+      "delete": "Vydalyty"
+    },
+    "edit": {
+      "title": "Redahuvaty ingrediyent",
+      "subtitle": "Onovit danni pakuvannya ta tsinu ingrediyenta.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Zberehty zminy",
+      "saving": "Zberezhennya..."
+    },
+    "delete": {
+      "title": "Vydalyty ingrediyent",
+      "confirm": "Vy vpevneni, shcho khochete vydalyty",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Vydalyty",
+      "deleting": "Vydalennya..."
+    },
+    "create": {
+      "title": "Dodaty ingrediyent",
+      "subtitle": "Vvedit dani pakuvannya, shchob stvoryty novyy ingrediyent.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Dodaty",
+      "creating": "Stvorennya..."
+    }
+  },
+  "recipes": {
+    "title": "Retsepty",
+    "subtitle": "Keruyte katalogom retseptiv, vykhodom ta bazovymy vytratamy.",
+    "searchPlaceholder": "Poshuk za nazvoyu retseptu...",
+    "addButton": "Dodaty retsept",
+    "loading": "Zavantazhennya retseptiv...",
+    "empty": "Retsepty ne znaydeno.",
+    "errors": {
+      "loadFailed": "Ne vdalosya zavantazhyty retsepty.",
+      "createFailed": "Ne vdalosya stvoryty retsept.",
+      "updateFailed": "Ne vdalosya onovyty retsept.",
+      "deleteFailed": "Ne vdalosya vydalyty retsept.",
+      "stepFailed": "Ne vdalosya onovyty kroky retseptu.",
+      "unitCategoryMismatch": "Obrana odynytsya ne vidpovidaye kategoriyi odynytsi ingrediyenta.",
+      "invalidYieldUnit": "Odynytsya vykhodu maye buty PIECE, G abo ML.",
+      "singleTierOnly": "Retsept maye buty odnopovarkhovym. Rivni nalashtovuyte na rivni produktu."
+    },
+    "columns": {
+      "name": "Nazva",
+      "category": "Kategoriya",
+      "yield": "Vykhid",
+      "yieldQuantity": "Kilkist vykhodu",
+      "yieldUnit": "Odynytsya vykhodu",
+      "difficulty": "Skladnist",
+      "totalCost": "Zahalna vartist",
+      "active": "Aktyvnyy",
+      "actions": "Diyi",
+      "preparationTime": "Chas pidgot. (khv)",
+      "baseDiameter": "Bazovyy diametr (sm)",
+      "description": "Opys",
+      "mainImage": "Holovne zobrazhennya"
+    },
+    "values": {
+      "active": "Tak",
+      "inactive": "Ni"
+    },
+    "actions": {
+      "edit": "Redahuvaty",
+      "delete": "Vydalyty"
+    },
+    "steps": {
+      "title": "Kroky",
+      "name": "Nazva kroku",
+      "order": "Poryadok",
+      "instruction": "Instruktsiya",
+      "description": "Opys",
+      "defaultName": "Krok",
+      "image": "Zobrazhennya kroku",
+      "imageUploaded": "Zobrazhennya zavantazheno",
+      "add": "Dodaty krok",
+      "save": "Zberehty",
+      "remove": "Vydalyty",
+      "empty": "Kroky shche ne dodani."
+    },
+    "edit": {
+      "title": "Redahuvaty retsept",
+      "subtitle": "Onovit dani retseptu ta keruyte krokamy prygotuvannya.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Zberehty zminy",
+      "saving": "Zberezhennya..."
+    },
+    "delete": {
+      "title": "Vydalyty retsept",
+      "confirm": "Vy vpevneni, shcho khochete vydalyty",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Vydalyty",
+      "deleting": "Vydalennya..."
+    },
+    "create": {
+      "title": "Dodaty retsept",
+      "subtitle": "Vyznachte dani retseptu, a potim dodayte ingrediyenty ta kroky.",
+      "back": "Nazad",
+      "next": "Dali",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Dodaty",
+      "creating": "Stvorennya...",
+      "confirmTitle": "Pidtverdzhennya stvorennya retseptu",
+      "confirmMessage": "Vy vpevneni, shcho khochete stvoryty tsey retsept? Pidtverdte, shcho pereviryly vsi dani.",
+      "confirmCancel": "Pereviryty shche raz",
+      "confirmProceed": "Tak, stvoryty retsept"
+    },
+    "ingredients": {
+      "title": "Ingrediyenty",
+      "select": "Obraty ingrediyent",
+      "searchPlaceholder": "Filtruvaty ingrediyenty za nazvoyu...",
+      "emptySearch": "Nemaie ingrediyentiv, shcho vidpovidayut filtru.",
+      "selectedId": "ID obranogo ingrediyenta",
+      "resultsCount": "Rezultaty: {{count}}",
+      "selected": "Obrano",
+      "quantity": "Kilkist",
+      "notes": "Prymiky",
+      "add": "Dodaty",
+      "addButton": "Dodaty ingrediyent",
+      "remove": "Vydalyty",
+      "empty": "Ingrediyenty shche ne dodani."
+    },
+    "summary": {
+      "title": "Pidsumok"
+    },
+    "images": {
+      "uploading": "Zavantazhennya zobrazhennya..."
+    }
   }
 }

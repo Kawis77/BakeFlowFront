@@ -59,5 +59,157 @@
       "user": "Uzytkownik",
       "workspace": "Workspace"
     }
+  },
+  "ingredients": {
+    "title": "Skladniki",
+    "subtitle": "Zarzadzaj baza skladnikow i danymi kosztowymi.",
+    "searchPlaceholder": "Szukaj po nazwie skladnika...",
+    "addButton": "Dodaj skladnik",
+    "loading": "Ladowanie skladnikow...",
+    "empty": "Brak skladnikow.",
+    "errors": {
+      "loadFailed": "Nie udalo sie pobrac skladnikow.",
+      "deleteFailed": "Nie udalo sie usunac skladnika.",
+      "createFailed": "Nie udalo sie dodac skladnika.",
+      "updateFailed": "Nie udalo sie zaktualizowac skladnika."
+    },
+    "columns": {
+      "name": "Nazwa",
+      "packageUnit": "Jednostka opakowania",
+      "packageQuantity": "Ilosc opakowania",
+      "packagePrice": "Cena opakowania",
+      "baseUnit": "Jednostka bazowa",
+      "unitPrice": "Cena jednostkowa",
+      "actions": "Akcje"
+    },
+    "actions": {
+      "label": "Zarzadzaj",
+      "edit": "Edytuj",
+      "delete": "Usun"
+    },
+    "edit": {
+      "title": "Edycja skladnika",
+      "subtitle": "Zaktualizuj dane opakowania i cene skladnika.",
+      "cancel": "Anuluj",
+      "confirmButton": "Zapisz zmiany",
+      "saving": "Zapisywanie..."
+    },
+    "delete": {
+      "title": "Usun skladnik",
+      "confirm": "Czy na pewno chcesz usunac",
+      "cancel": "Anuluj",
+      "confirmButton": "Usun",
+      "deleting": "Usuwanie..."
+    },
+    "create": {
+      "title": "Dodaj skladnik",
+      "subtitle": "Wprowadz dane opakowania, aby utworzyc nowy skladnik.",
+      "cancel": "Anuluj",
+      "confirmButton": "Dodaj",
+      "creating": "Dodawanie..."
+    }
+  },
+  "recipes": {
+    "title": "Receptury",
+    "subtitle": "Zarzadzaj katalogiem receptur, wydajnoscia i bazowymi kosztami.",
+    "searchPlaceholder": "Szukaj po nazwie receptury...",
+    "addButton": "Dodaj recepture",
+    "loading": "Ladowanie receptur...",
+    "empty": "Brak receptur.",
+    "errors": {
+      "loadFailed": "Nie udalo sie pobrac receptur.",
+      "createFailed": "Nie udalo sie dodac receptury.",
+      "updateFailed": "Nie udalo sie zaktualizowac receptury.",
+      "deleteFailed": "Nie udalo sie usunac receptury.",
+      "stepFailed": "Nie udalo sie zaktualizowac krokow receptury.",
+      "unitCategoryMismatch": "Wybrana jednostka nie pasuje do kategorii jednostki skladnika.",
+      "invalidYieldUnit": "Jednostka wydajnosci musi byc PIECE, G lub ML.",
+      "singleTierOnly": "Receptura musi byc jednopietrowa. Pietra ustawiaj na poziomie produktu."
+    },
+    "columns": {
+      "name": "Nazwa",
+      "category": "Kategoria",
+      "yield": "Wydajnosc",
+      "yieldQuantity": "Ilosc wydajnosci",
+      "yieldUnit": "Jednostka wydajnosci",
+      "difficulty": "Poziom",
+      "totalCost": "Koszt calkowity",
+      "active": "Aktywna",
+      "actions": "Akcje",
+      "preparationTime": "Czas przygot. (min)",
+      "baseDiameter": "Srednica bazowa (cm)",
+      "description": "Opis",
+      "mainImage": "Zdjecie glowne"
+    },
+    "values": {
+      "active": "Tak",
+      "inactive": "Nie"
+    },
+    "actions": {
+      "edit": "Edytuj",
+      "delete": "Usun"
+    },
+    "steps": {
+      "title": "Kroki",
+      "name": "Nazwa kroku",
+      "order": "Kolejnosc",
+      "instruction": "Instrukcja",
+      "description": "Opis",
+      "defaultName": "Krok",
+      "image": "Zdjecie kroku",
+      "imageUploaded": "Zdjecie dodane",
+      "add": "Dodaj krok",
+      "save": "Zapisz",
+      "remove": "Usun",
+      "empty": "Brak dodanych krokow."
+    },
+    "edit": {
+      "title": "Edytuj recepture",
+      "subtitle": "Zaktualizuj dane receptury i zarzadzaj krokami wykonania.",
+      "cancel": "Anuluj",
+      "confirmButton": "Zapisz zmiany",
+      "saving": "Zapisywanie..."
+    },
+    "delete": {
+      "title": "Usun recepture",
+      "confirm": "Czy na pewno chcesz usunac",
+      "cancel": "Anuluj",
+      "confirmButton": "Usun",
+      "deleting": "Usuwanie..."
+    },
+    "create": {
+      "title": "Dodaj recepture",
+      "subtitle": "Zdefiniuj dane receptury, a potem przypisz skladniki i kroki.",
+      "back": "Wroc",
+      "next": "Dalej",
+      "cancel": "Anuluj",
+      "confirmButton": "Dodaj",
+      "creating": "Dodawanie...",
+      "confirmTitle": "Potwierdz utworzenie receptury",
+      "confirmMessage": "Czy na pewno chcesz utworzyc te recepture? Upewnij sie, ze wszystko zostalo sprawdzone.",
+      "confirmCancel": "Wroc do sprawdzenia",
+      "confirmProceed": "Tak, utworz recepture"
+    },
+    "ingredients": {
+      "title": "Skladniki",
+      "select": "Wybierz skladnik",
+      "searchPlaceholder": "Filtruj skladniki po nazwie...",
+      "emptySearch": "Brak skladnikow pasujacych do filtra.",
+      "selectedId": "ID wybranego skladnika",
+      "resultsCount": "Wyniki: {{count}}",
+      "selected": "Wybrany",
+      "quantity": "Ilosc",
+      "notes": "Notatki",
+      "add": "Dodaj",
+      "addButton": "Dodaj skladnik",
+      "remove": "Usun",
+      "empty": "Brak dodanych skladnikow."
+    },
+    "summary": {
+      "title": "Podsumowanie"
+    },
+    "images": {
+      "uploading": "Wgrywanie zdjecia..."
+    }
   }
 }

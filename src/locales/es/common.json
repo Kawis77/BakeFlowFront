@@ -59,5 +59,157 @@
       "user": "Usuario",
       "workspace": "Espacio"
     }
+  },
+  "ingredients": {
+    "title": "Ingredientes",
+    "subtitle": "Gestiona la base de ingredientes y los datos de costos.",
+    "searchPlaceholder": "Buscar por nombre de ingrediente...",
+    "addButton": "Agregar ingrediente",
+    "loading": "Cargando ingredientes...",
+    "empty": "No se encontraron ingredientes.",
+    "errors": {
+      "loadFailed": "No se pudieron cargar los ingredientes.",
+      "deleteFailed": "No se pudo eliminar el ingrediente.",
+      "createFailed": "No se pudo crear el ingrediente.",
+      "updateFailed": "No se pudo actualizar el ingrediente."
+    },
+    "columns": {
+      "name": "Nombre",
+      "packageUnit": "Unidad del paquete",
+      "packageQuantity": "Cantidad del paquete",
+      "packagePrice": "Precio del paquete",
+      "baseUnit": "Unidad base",
+      "unitPrice": "Precio unitario",
+      "actions": "Acciones"
+    },
+    "actions": {
+      "label": "Gestionar",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "edit": {
+      "title": "Editar ingrediente",
+      "subtitle": "Actualiza los datos del paquete y el precio del ingrediente.",
+      "cancel": "Cancelar",
+      "confirmButton": "Guardar cambios",
+      "saving": "Guardando..."
+    },
+    "delete": {
+      "title": "Eliminar ingrediente",
+      "confirm": "Seguro que deseas eliminar",
+      "cancel": "Cancelar",
+      "confirmButton": "Eliminar",
+      "deleting": "Eliminando..."
+    },
+    "create": {
+      "title": "Agregar ingrediente",
+      "subtitle": "Introduce los datos del paquete para crear un nuevo ingrediente.",
+      "cancel": "Cancelar",
+      "confirmButton": "Crear",
+      "creating": "Creando..."
+    }
+  },
+  "recipes": {
+    "title": "Recetas",
+    "subtitle": "Gestiona el catalogo de recetas, rendimiento y costos base.",
+    "searchPlaceholder": "Buscar por nombre de receta...",
+    "addButton": "Agregar receta",
+    "loading": "Cargando recetas...",
+    "empty": "No se encontraron recetas.",
+    "errors": {
+      "loadFailed": "No se pudieron cargar las recetas.",
+      "createFailed": "No se pudo crear la receta.",
+      "updateFailed": "No se pudo actualizar la receta.",
+      "deleteFailed": "No se pudo eliminar la receta.",
+      "stepFailed": "No se pudieron actualizar los pasos de la receta.",
+      "unitCategoryMismatch": "La unidad seleccionada no coincide con la categoria de unidad del ingrediente.",
+      "invalidYieldUnit": "La unidad de rendimiento debe ser PIECE, G o ML.",
+      "singleTierOnly": "La receta debe ser de un solo nivel. Configura niveles en el producto."
+    },
+    "columns": {
+      "name": "Nombre",
+      "category": "Categoria",
+      "yield": "Rendimiento",
+      "yieldQuantity": "Cantidad de rendimiento",
+      "yieldUnit": "Unidad de rendimiento",
+      "difficulty": "Dificultad",
+      "totalCost": "Costo total",
+      "active": "Activa",
+      "actions": "Acciones",
+      "preparationTime": "Tiempo prep. (min)",
+      "baseDiameter": "Diametro base (cm)",
+      "description": "Descripcion",
+      "mainImage": "Imagen principal"
+    },
+    "values": {
+      "active": "Si",
+      "inactive": "No"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "steps": {
+      "title": "Pasos",
+      "name": "Nombre del paso",
+      "order": "Orden",
+      "instruction": "Instruccion",
+      "description": "Descripcion",
+      "defaultName": "Paso",
+      "image": "Imagen del paso",
+      "imageUploaded": "Imagen cargada",
+      "add": "Agregar paso",
+      "save": "Guardar",
+      "remove": "Eliminar",
+      "empty": "No hay pasos agregados."
+    },
+    "edit": {
+      "title": "Editar receta",
+      "subtitle": "Actualiza los datos de la receta y gestiona los pasos de preparacion.",
+      "cancel": "Cancelar",
+      "confirmButton": "Guardar cambios",
+      "saving": "Guardando..."
+    },
+    "delete": {
+      "title": "Eliminar receta",
+      "confirm": "Seguro que deseas eliminar",
+      "cancel": "Cancelar",
+      "confirmButton": "Eliminar",
+      "deleting": "Eliminando..."
+    },
+    "create": {
+      "title": "Agregar receta",
+      "subtitle": "Define los datos de la receta y luego asigna ingredientes y pasos.",
+      "back": "Atras",
+      "next": "Siguiente",
+      "cancel": "Cancelar",
+      "confirmButton": "Crear",
+      "creating": "Creando...",
+      "confirmTitle": "Confirmar creacion de receta",
+      "confirmMessage": "Estas seguro de que deseas crear esta receta? Confirma que revisaste todos los datos.",
+      "confirmCancel": "Revisar de nuevo",
+      "confirmProceed": "Si, crear receta"
+    },
+    "ingredients": {
+      "title": "Ingredientes",
+      "select": "Seleccionar ingrediente",
+      "searchPlaceholder": "Filtrar ingredientes por nombre...",
+      "emptySearch": "No hay ingredientes que coincidan con el filtro.",
+      "selectedId": "ID de ingrediente seleccionado",
+      "resultsCount": "Resultados: {{count}}",
+      "selected": "Seleccionado",
+      "quantity": "Cantidad",
+      "notes": "Notas",
+      "add": "Agregar",
+      "addButton": "Agregar ingrediente",
+      "remove": "Eliminar",
+      "empty": "No hay ingredientes agregados."
+    },
+    "summary": {
+      "title": "Resumen"
+    },
+    "images": {
+      "uploading": "Subiendo imagen..."
+    }
   }
 }

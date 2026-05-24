@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { logout, me } from '../lib/api'
 import AppHeader from '../components/navigation/AppHeader'
 import AppSidebar from '../components/navigation/AppSidebar'
 
 function AppLayout() {
-  const { t } = useTranslation()
-  const location = useLocation()
   const navigate = useNavigate()
   const [theme, setTheme] = useState(() => localStorage.getItem('bakeflow-theme') ?? 'warm')
   const [user, setUser] = useState(null)
@@ -49,19 +46,6 @@ function AppLayout() {
       navigate('/login', { replace: true })
     }
   }
-
-  const titleByPath = {
-    '/dashboard': t('nav.dashboard'),
-    '/orders': t('nav.orders'),
-    '/products': t('nav.products'),
-    '/recipes': t('nav.recipes'),
-    '/ingredients': t('nav.ingredients'),
-    '/extra-items': t('nav.extraItems'),
-    '/reports': t('nav.reports'),
-    '/settings': t('nav.settings'),
-  }
-
-  const pageTitle = titleByPath[location.pathname] ?? t('nav.dashboard')
 
   return (
     <main className="page-bg flex min-h-screen flex-col px-3 py-3 lg:px-4">
