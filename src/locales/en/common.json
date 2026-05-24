@@ -59,5 +59,157 @@
       "user": "User",
       "workspace": "Workspace"
     }
+  },
+  "ingredients": {
+    "title": "Ingredients",
+    "subtitle": "Manage your ingredient base and costing inputs.",
+    "searchPlaceholder": "Search by ingredient name...",
+    "addButton": "Add ingredient",
+    "loading": "Loading ingredients...",
+    "empty": "No ingredients found.",
+    "errors": {
+      "loadFailed": "Failed to load ingredients.",
+      "deleteFailed": "Failed to delete ingredient.",
+      "createFailed": "Failed to create ingredient.",
+      "updateFailed": "Failed to update ingredient."
+    },
+    "columns": {
+      "name": "Name",
+      "packageUnit": "Package unit",
+      "packageQuantity": "Package qty",
+      "packagePrice": "Package price",
+      "baseUnit": "Base unit",
+      "unitPrice": "Unit price",
+      "actions": "Actions"
+    },
+    "actions": {
+      "label": "Manage",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "edit": {
+      "title": "Edit ingredient",
+      "subtitle": "Update ingredient package details and pricing.",
+      "cancel": "Cancel",
+      "confirmButton": "Save changes",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete ingredient",
+      "confirm": "Are you sure you want to delete",
+      "cancel": "Cancel",
+      "confirmButton": "Delete",
+      "deleting": "Deleting..."
+    },
+    "create": {
+      "title": "Add ingredient",
+      "subtitle": "Enter package details to create a new ingredient.",
+      "cancel": "Cancel",
+      "confirmButton": "Create",
+      "creating": "Creating..."
+    }
+  },
+  "recipes": {
+    "title": "Recipes",
+    "subtitle": "Manage recipe catalog, yields, and costing baselines.",
+    "searchPlaceholder": "Search by recipe name...",
+    "addButton": "Add recipe",
+    "loading": "Loading recipes...",
+    "empty": "No recipes found.",
+    "errors": {
+      "loadFailed": "Failed to load recipes.",
+      "createFailed": "Failed to create recipe.",
+      "updateFailed": "Failed to update recipe.",
+      "deleteFailed": "Failed to delete recipe.",
+      "stepFailed": "Failed to update recipe steps.",
+      "unitCategoryMismatch": "Selected unit does not match the ingredient unit category.",
+      "invalidYieldUnit": "Yield unit must be PIECE, G, or ML.",
+      "singleTierOnly": "Recipe must be single-tier. Configure tiers at product level."
+    },
+    "columns": {
+      "name": "Name",
+      "category": "Category",
+      "yield": "Yield",
+      "yieldQuantity": "Yield quantity",
+      "yieldUnit": "Yield unit",
+      "difficulty": "Difficulty",
+      "totalCost": "Total cost",
+      "active": "Active",
+      "actions": "Actions",
+      "preparationTime": "Prep time (min)",
+      "baseDiameter": "Base diameter (cm)",
+      "description": "Description",
+      "mainImage": "Main image"
+    },
+    "values": {
+      "active": "Yes",
+      "inactive": "No"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "steps": {
+      "title": "Steps",
+      "name": "Step name",
+      "order": "Order",
+      "instruction": "Instruction",
+      "description": "Description",
+      "defaultName": "Step",
+      "image": "Step image",
+      "imageUploaded": "Image uploaded",
+      "add": "Add step",
+      "save": "Save",
+      "remove": "Remove",
+      "empty": "No steps added yet."
+    },
+    "edit": {
+      "title": "Edit recipe",
+      "subtitle": "Update recipe details and manage preparation steps.",
+      "cancel": "Cancel",
+      "confirmButton": "Save changes",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete recipe",
+      "confirm": "Are you sure you want to delete",
+      "cancel": "Cancel",
+      "confirmButton": "Delete",
+      "deleting": "Deleting..."
+    },
+    "create": {
+      "title": "Add recipe",
+      "subtitle": "Define recipe details, then assign ingredients and preparation steps.",
+      "back": "Back",
+      "next": "Next",
+      "cancel": "Cancel",
+      "confirmButton": "Create",
+      "creating": "Creating...",
+      "confirmTitle": "Confirm recipe creation",
+      "confirmMessage": "Are you sure you want to create this recipe? Please confirm you reviewed all details.",
+      "confirmCancel": "Review again",
+      "confirmProceed": "Yes, create recipe"
+    },
+    "ingredients": {
+      "title": "Ingredients",
+      "select": "Select ingredient",
+      "searchPlaceholder": "Filter ingredients by name...",
+      "emptySearch": "No ingredients match your filter.",
+      "selectedId": "Selected ingredient ID",
+      "resultsCount": "Results: {{count}}",
+      "selected": "Selected",
+      "quantity": "Quantity",
+      "notes": "Notes",
+      "add": "Add",
+      "addButton": "Add ingredient",
+      "remove": "Remove",
+      "empty": "No ingredients added yet."
+    },
+    "summary": {
+      "title": "Summary"
+    },
+    "images": {
+      "uploading": "Uploading image..."
+    }
   }
 }

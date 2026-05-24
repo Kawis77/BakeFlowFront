@@ -46,6 +46,7 @@
 
 body {
   margin: 0;
+  font-size: 15px;
 }
 
 @layer components {
@@ -81,7 +82,9 @@ body {
     width: 100%;
     border-radius: var(--radius-md);
     border: 1px solid var(--input-border);
-    padding: 0.5rem 0.75rem;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.875rem;
+    line-height: 1.35;
     color: var(--text-primary);
     outline: none;
     transition: all 0.15s ease;
@@ -97,10 +100,15 @@ body {
     border-radius: var(--radius-md);
     background: var(--button-bg);
     color: var(--button-text);
-    padding: 0.625rem 1rem;
-    font-size: 0.875rem;
+    padding: 0.525rem 0.9rem;
+    font-size: 0.8125rem;
     font-weight: 600;
     transition: background 0.15s ease;
+  }
+
+  .modal-panel {
+    max-height: min(88vh, 920px);
+    overflow-y: auto;
   }
 
   .primary-btn:hover {
