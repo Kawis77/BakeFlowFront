@@ -14,6 +14,7 @@
     "orders": "Orders",
     "products": "Products",
     "recipes": "Recipes",
+    "components": "Components",
     "ingredients": "Ingredients",
     "extraItems": "Extra Items",
     "reports": "Reports",
@@ -126,6 +127,10 @@
       "invalidYieldUnit": "Yield unit must be PIECE, G, or ML.",
       "singleTierOnly": "Recipe must be single-tier. Configure tiers at product level."
     },
+    "validation": {
+      "required": "{{field}} is required.",
+      "positive": "{{field}} must be greater than 0."
+    },
     "columns": {
       "name": "Name",
       "category": "Category",
@@ -133,6 +138,7 @@
       "yieldQuantity": "Yield quantity",
       "yieldUnit": "Yield unit",
       "difficulty": "Difficulty",
+      "shape": "Shape",
       "totalCost": "Total cost",
       "active": "Active",
       "actions": "Actions",
@@ -141,13 +147,37 @@
       "description": "Description",
       "mainImage": "Main image"
     },
+    "categoryOptions": {
+      "cake": "Cake",
+      "dessert": "Dessert",
+      "other": "Other",
+      "pastry": "Pastry"
+    },
+    "difficultyOptions": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "shapeOptions": {
+      "round": "Round",
+      "square": "Square"
+    },
+    "yieldUnitOptions": {
+      "piece": "pcs",
+      "g": "g",
+      "ml": "ml"
+    },
     "values": {
       "active": "Yes",
       "inactive": "No"
     },
     "actions": {
+      "view": "View",
       "edit": "Edit",
       "delete": "Delete"
+    },
+    "preview": {
+      "close": "Close"
     },
     "steps": {
       "title": "Steps",
@@ -205,11 +235,33 @@
       "remove": "Remove",
       "empty": "No ingredients added yet."
     },
+    "components": {
+      "title": "Components",
+      "addButton": "Add component",
+      "searchPlaceholder": "Filter recipes by name...",
+      "emptySearch": "No recipes match your filter.",
+      "selected": "Selected recipe",
+      "factor": "Usage factor",
+      "modeManual": "Manual factor",
+      "modeDiameter": "Auto-scale by diameter",
+      "autoScale": "auto-scaled",
+      "empty": "No components added yet."
+    },
     "summary": {
-      "title": "Summary"
+      "title": "Summary",
+      "componentsSubtotal": "Components subtotal",
+      "ingredientsSubtotal": "Ingredients subtotal"
     },
     "images": {
       "uploading": "Uploading image..."
     }
+  },
+  "componentsModule": {
+    "title": "Components",
+    "subtitle": "Manage reusable recipe building blocks like creams, sponge bases, and fillings.",
+    "searchPlaceholder": "Search by component name...",
+    "addButton": "Add component recipe",
+    "loading": "Loading components...",
+    "empty": "No component recipes found."
   }
 }

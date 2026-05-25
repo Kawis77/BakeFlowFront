@@ -14,6 +14,7 @@
     "orders": "Zamovlennya",
     "products": "Produkty",
     "recipes": "Retsepty",
+    "components": "Komponenty",
     "ingredients": "Ingrediyenty",
     "extraItems": "Dodatkovi elementy",
     "reports": "Zvity",
@@ -126,6 +127,10 @@
       "invalidYieldUnit": "Odynytsya vykhodu maye buty PIECE, G abo ML.",
       "singleTierOnly": "Retsept maye buty odnopovarkhovym. Rivni nalashtovuyte na rivni produktu."
     },
+    "validation": {
+      "required": "Pole {{field}} obovyazkove.",
+      "positive": "Pole {{field}} maye buty bilshe za 0."
+    },
     "columns": {
       "name": "Nazva",
       "category": "Kategoriya",
@@ -133,6 +138,7 @@
       "yieldQuantity": "Kilkist vykhodu",
       "yieldUnit": "Odynytsya vykhodu",
       "difficulty": "Skladnist",
+      "shape": "Forma",
       "totalCost": "Zahalna vartist",
       "active": "Aktyvnyy",
       "actions": "Diyi",
@@ -141,13 +147,37 @@
       "description": "Opys",
       "mainImage": "Holovne zobrazhennya"
     },
+    "categoryOptions": {
+      "cake": "Tort",
+      "dessert": "Desert",
+      "other": "Inshe",
+      "pastry": "Tisto"
+    },
+    "difficultyOptions": {
+      "easy": "Lehkyy",
+      "medium": "Seredniy",
+      "hard": "Skladnyy"
+    },
+    "shapeOptions": {
+      "round": "Kruhlyy",
+      "square": "Kvadratnyy"
+    },
+    "yieldUnitOptions": {
+      "piece": "sht.",
+      "g": "g",
+      "ml": "ml"
+    },
     "values": {
       "active": "Tak",
       "inactive": "Ni"
     },
     "actions": {
+      "view": "Perehlyad",
       "edit": "Redahuvaty",
       "delete": "Vydalyty"
+    },
+    "preview": {
+      "close": "Zakryty"
     },
     "steps": {
       "title": "Kroky",
@@ -205,11 +235,33 @@
       "remove": "Vydalyty",
       "empty": "Ingrediyenty shche ne dodani."
     },
+    "components": {
+      "title": "Komponenty",
+      "addButton": "Dodaty komponent",
+      "searchPlaceholder": "Filtruvaty retsepty za nazvoyu...",
+      "emptySearch": "Nemaie retseptiv, shcho vidpovidayut filtru.",
+      "selected": "Obranyy retsept",
+      "factor": "Koeffitsiyent vykorystannya",
+      "modeManual": "Ruchnyy koeffitsiyent",
+      "modeDiameter": "Avto-masshtabuvannya za diametrom",
+      "autoScale": "avto-masshtab",
+      "empty": "Komponenty shche ne dodani."
+    },
     "summary": {
-      "title": "Pidsumok"
+      "title": "Pidsumok",
+      "componentsSubtotal": "Promizhna suma komponentiv",
+      "ingredientsSubtotal": "Promizhna suma ingrediyentiv"
     },
     "images": {
       "uploading": "Zavantazhennya zobrazhennya..."
     }
+  },
+  "componentsModule": {
+    "title": "Komponenty",
+    "subtitle": "Keruyte bazovymy retseptamy, takymy yak kremy, biskvity ta nachynky.",
+    "searchPlaceholder": "Shukaty za nazvoyu komponenta...",
+    "addButton": "Dodaty retsept komponenta",
+    "loading": "Zavantazhennya komponentiv...",
+    "empty": "Nemaie retseptiv komponentiv."
   }
 }
