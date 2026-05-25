@@ -113,6 +113,71 @@
       "creating": "Creating..."
     }
   },
+  "products": {
+    "title": "Products",
+    "subtitle": "Manage sellable products and profitability.",
+    "searchPlaceholder": "Search by product name...",
+    "addButton": "Add product",
+    "selectRecipe": "Select recipe",
+    "scaleFactor": "Scale factor",
+    "loading": "Loading products...",
+    "empty": "No products found.",
+    "errors": {
+      "loadFailed": "Failed to load products.",
+      "createFailed": "Failed to create product.",
+      "updateFailed": "Failed to update product.",
+      "deleteFailed": "Failed to delete product."
+    },
+    "columns": {
+      "name": "Name",
+      "recipe": "Recipe",
+      "targetDiameter": "Target diameter (cm)",
+      "sellingPrice": "Selling price",
+      "productionCost": "Production cost",
+      "profit": "Profit",
+      "margin": "Margin",
+      "status": "Status",
+      "description": "Description",
+      "image": "Image",
+      "actions": "Actions"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "values": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "create": {
+      "title": "Add product",
+      "subtitle": "Create a sellable product and link a recipe.",
+      "cancel": "Cancel",
+      "confirmButton": "Create",
+      "creating": "Creating..."
+    },
+    "edit": {
+      "title": "Edit product",
+      "subtitle": "Update product details and pricing.",
+      "cancel": "Cancel",
+      "confirmButton": "Save changes",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete product",
+      "confirm": "Are you sure you want to delete",
+      "cancel": "Cancel",
+      "confirmButton": "Delete",
+      "deleting": "Deleting..."
+    },
+    "tiers": {
+      "title": "Tiers",
+      "add": "Add tier",
+      "remove": "Remove",
+      "tierLabel": "Tier {{number}}"
+    }
+  },
   "recipes": {
     "title": "Recipes",
     "subtitle": "Manage recipe catalog, yields, and costing baselines.",
@@ -128,7 +193,8 @@
       "stepFailed": "Failed to update recipe steps.",
       "unitCategoryMismatch": "Selected unit does not match the ingredient unit category.",
       "invalidYieldUnit": "Yield unit must be PIECE, G, or ML.",
-      "singleTierOnly": "Recipe must be single-tier. Configure tiers at product level."
+      "singleTierOnly": "Recipe must be single-tier. Configure tiers at product level.",
+      "deleteBlockedByComponent": "You cannot delete this recipe because it is used as a component in another recipe."
     },
     "validation": {
       "required": "{{field}} is required.",

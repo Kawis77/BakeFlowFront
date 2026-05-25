@@ -113,6 +113,71 @@
       "creating": "Creando..."
     }
   },
+  "products": {
+    "title": "Productos",
+    "subtitle": "Gestiona productos vendibles y rentabilidad.",
+    "searchPlaceholder": "Buscar por nombre del producto...",
+    "addButton": "Agregar producto",
+    "selectRecipe": "Seleccionar receta",
+    "scaleFactor": "Factor de escala",
+    "loading": "Cargando productos...",
+    "empty": "No hay productos.",
+    "errors": {
+      "loadFailed": "No se pudieron cargar los productos.",
+      "createFailed": "No se pudo crear el producto.",
+      "updateFailed": "No se pudo actualizar el producto.",
+      "deleteFailed": "No se pudo eliminar el producto."
+    },
+    "columns": {
+      "name": "Nombre",
+      "recipe": "Receta",
+      "targetDiameter": "Diametro objetivo (cm)",
+      "sellingPrice": "Precio de venta",
+      "productionCost": "Costo de produccion",
+      "profit": "Ganancia",
+      "margin": "Margen",
+      "status": "Estado",
+      "description": "Descripcion",
+      "image": "Imagen",
+      "actions": "Acciones"
+    },
+    "actions": {
+      "view": "Ver",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "values": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "create": {
+      "title": "Agregar producto",
+      "subtitle": "Crea un producto vendible y vincula una receta.",
+      "cancel": "Cancelar",
+      "confirmButton": "Crear",
+      "creating": "Creando..."
+    },
+    "edit": {
+      "title": "Editar producto",
+      "subtitle": "Actualiza datos y precio del producto.",
+      "cancel": "Cancelar",
+      "confirmButton": "Guardar cambios",
+      "saving": "Guardando..."
+    },
+    "delete": {
+      "title": "Eliminar producto",
+      "confirm": "Seguro que deseas eliminar",
+      "cancel": "Cancelar",
+      "confirmButton": "Eliminar",
+      "deleting": "Eliminando..."
+    },
+    "tiers": {
+      "title": "Pisos",
+      "add": "Agregar piso",
+      "remove": "Eliminar",
+      "tierLabel": "Piso {{number}}"
+    }
+  },
   "recipes": {
     "title": "Recetas",
     "subtitle": "Gestiona el catalogo de recetas, rendimiento y costos base.",
@@ -128,7 +193,8 @@
       "stepFailed": "No se pudieron actualizar los pasos de la receta.",
       "unitCategoryMismatch": "La unidad seleccionada no coincide con la categoria de unidad del ingrediente.",
       "invalidYieldUnit": "La unidad de rendimiento debe ser PIECE, G o ML.",
-      "singleTierOnly": "La receta debe ser de un solo nivel. Configura niveles en el producto."
+      "singleTierOnly": "La receta debe ser de un solo nivel. Configura niveles en el producto.",
+      "deleteBlockedByComponent": "No puedes eliminar esta receta porque se usa como componente en otra receta."
     },
     "validation": {
       "required": "El campo {{field}} es obligatorio.",
