@@ -76,6 +76,8 @@
     },
     "columns": {
       "name": "Nombre",
+      "manufacturer": "Fabricante",
+      "image": "Imagen",
       "packageUnit": "Unidad del paquete",
       "packageQuantity": "Cantidad del paquete",
       "packagePrice": "Precio del paquete",
@@ -85,6 +87,7 @@
     },
     "actions": {
       "label": "Gestionar",
+      "view": "Ver",
       "edit": "Editar",
       "delete": "Eliminar"
     },

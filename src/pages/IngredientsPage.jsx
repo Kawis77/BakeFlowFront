@@ -1,13 +1,30 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { createIngredient, deleteIngredient, getIngredients, updateIngredient } from '../lib/api'
+import { createIngredient, deleteIngredient, getIngredients, updateIngredient, uploadIngredientImage } from '../lib/api'
+import ImageUploadField from '../components/forms/ImageUploadField'
+
+const apiBaseUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:8080/api/v1'
+const apiOrigin = apiBaseUrl.replace(/\/api\/v1\/?$/, '')
+
+function resolveUploadUrl(path) {
+  if (!path) return ''
+  if (path.startsWith('http://') || path.startsWith('https://')) return path
+  return `${apiOrigin}${path}`
+}
 
 const unitOptions = ['KG', 'G', 'L', 'ML', 'PIECE']
 const initialCreateForm = {
   name: '',
+  manufacturer: '',
   packageUnit: 'KG',
   packageQuantity: '',
   packagePrice: '',
+}
+
+function formatMoney(value) {
+  const n = Number(value)
+  if (!Number.isFinite(n)) return '-'
+  return n.toFixed(2)
 }
 
 function IngredientsPage() {
@@ -26,6 +43,9 @@ function IngredientsPage() {
   const [editForm, setEditForm] = useState(initialCreateForm)
   const [editError, setEditError] = useState('')
   const [isEditing, setIsEditing] = useState(false)
+  const [previewItem, setPreviewItem] = useState(null)
+  const [createImageFile, setCreateImageFile] = useState(null)
+  const [editImageFile, setEditImageFile] = useState(null)
 
   useEffect(() => {
     let mounted = true
@@ -95,17 +115,22 @@ function IngredientsPage() {
     setCreateError('')
 
     try {
-      await createIngredient({
+      const { data: ingredientId } = await createIngredient({
         name: createForm.name,
+        manufacturer: createForm.manufacturer || null,
         packageUnit: createForm.packageUnit,
         packageQuantity: Number(createForm.packageQuantity),
         packagePrice: Number(createForm.packagePrice),
       })
+      if (createImageFile) {
+        await uploadIngredientImage(ingredientId, createImageFile)
+      }
 
       const { data } = await getIngredients()
       setIngredients(Array.isArray(data) ? data : [])
       setShowCreateModal(false)
       setCreateForm(initialCreateForm)
+      setCreateImageFile(null)
     } catch (err) {
       setCreateError(err?.response?.data?.message ?? t('ingredients.errors.createFailed'))
     } finally {
@@ -118,6 +143,7 @@ function IngredientsPage() {
     setEditError('')
     setEditForm({
       name: item.name ?? '',
+      manufacturer: item.manufacturer ?? '',
       packageUnit: item.packageUnit ?? 'KG',
       packageQuantity: item.packageQuantity ?? '',
       packagePrice: item.packagePrice ?? '',
@@ -136,15 +162,20 @@ function IngredientsPage() {
     try {
       await updateIngredient(editItem.id, {
         name: editForm.name,
+        manufacturer: editForm.manufacturer || null,
         packageUnit: editForm.packageUnit,
         packageQuantity: Number(editForm.packageQuantity),
         packagePrice: Number(editForm.packagePrice),
       })
 
-      const { data } = await getIngredients()
-      setIngredients(Array.isArray(data) ? data : [])
+      if (editImageFile) {
+        await uploadIngredientImage(editItem.id, editImageFile)
+      }
+      const { data: refreshed } = await getIngredients()
+      setIngredients(Array.isArray(refreshed) ? refreshed : [])
       setEditItem(null)
       setEditForm(initialCreateForm)
+      setEditImageFile(null)
     } catch (err) {
       setEditError(err?.response?.data?.message ?? t('ingredients.errors.updateFailed'))
     } finally {
@@ -184,7 +215,7 @@ function IngredientsPage() {
           <table className="min-w-full border-collapse bg-white/80">
             <thead className="bg-slate-50/90">
               <tr>
-                {['name', 'packageUnit', 'packageQuantity', 'packagePrice', 'baseUnit', 'unitPrice', 'actions'].map((key) => (
+                {['name', 'manufacturer', 'packageUnit', 'packageQuantity', 'packagePrice', 'baseUnit', 'unitPrice', 'actions'].map((key) => (
                   <th key={key} className="whitespace-nowrap border-b border-slate-200 px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">
                     {t(`ingredients.columns.${key}`)}
                   </th>
@@ -194,23 +225,31 @@ function IngredientsPage() {
             <tbody>
               {loading ? (
                 <tr>
-                  <td colSpan={7} className="px-3 py-8 text-center text-sm text-slate-500">{t('ingredients.loading')}</td>
+                  <td colSpan={8} className="px-3 py-8 text-center text-sm text-slate-500">{t('ingredients.loading')}</td>
                 </tr>
               ) : filteredIngredients.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-3 py-8 text-center text-sm text-slate-500">{t('ingredients.empty')}</td>
+                  <td colSpan={8} className="px-3 py-8 text-center text-sm text-slate-500">{t('ingredients.empty')}</td>
                 </tr>
               ) : (
                 filteredIngredients.map((item) => (
-                  <tr key={item.id} className="hover:bg-slate-50/80">
+                  <tr key={item.id} className="cursor-pointer hover:bg-slate-50/80" onDoubleClick={() => setPreviewItem(item)}>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-800">{item.name}</td>
+                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.manufacturer || '-'}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.packageUnit}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.packageQuantity}</td>
-                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.packagePrice}</td>
+                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatMoney(item.packagePrice)}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.baseUnit}</td>
-                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.unitPrice}</td>
+                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatMoney(item.unitPrice)}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">
                       <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          className="rounded border border-sky-200 bg-sky-50 px-2 py-1 text-xs text-sky-700 hover:bg-sky-100"
+                          onClick={() => setPreviewItem(item)}
+                        >
+                          {t('ingredients.actions.view')}
+                        </button>
                         <button
                           type="button"
                           className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 hover:bg-slate-50"
@@ -245,6 +284,11 @@ function IngredientsPage() {
               <label className="block">
                 <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.name')}</span>
                 <input name="name" value={editForm.name} onChange={handleEditChange} className="input-field" required />
+              </label>
+
+              <label className="block">
+                <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.manufacturer')}</span>
+                <input name="manufacturer" value={editForm.manufacturer} onChange={handleEditChange} className="input-field" />
               </label>
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -285,6 +329,13 @@ function IngredientsPage() {
                   required
                 />
               </label>
+
+              <ImageUploadField
+                label={t('ingredients.columns.image')}
+                selectedFileName={editImageFile?.name}
+                previewUrl={editItem?.imageUrl ? resolveUploadUrl(editItem.imageUrl) : undefined}
+                onFileSelect={(file) => setEditImageFile(file || null)}
+              />
 
               {editError ? <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{editError}</p> : null}
 
@@ -349,6 +400,11 @@ function IngredientsPage() {
                 <input name="name" value={createForm.name} onChange={handleCreateChange} className="input-field" required />
               </label>
 
+              <label className="block">
+                <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.manufacturer')}</span>
+                <input name="manufacturer" value={createForm.manufacturer} onChange={handleCreateChange} className="input-field" />
+              </label>
+
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <label className="block">
                   <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.packageUnit')}</span>
@@ -388,6 +444,12 @@ function IngredientsPage() {
                 />
               </label>
 
+              <ImageUploadField
+                label={t('ingredients.columns.image')}
+                selectedFileName={createImageFile?.name}
+                onFileSelect={(file) => setCreateImageFile(file || null)}
+              />
+
               {createError ? <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{createError}</p> : null}
 
               <div className="flex justify-end gap-2 pt-1">
@@ -407,6 +469,36 @@ function IngredientsPage() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      ) : null}
+
+      {previewItem ? (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/30 px-4">
+          <div className="modal-panel w-full max-w-2xl rounded-xl border border-slate-200 bg-white p-6 shadow-2xl">
+            <h3 className="text-primary mb-2 font-serif text-xl">{previewItem.name}</h3>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1.1fr_1fr]">
+              <div className="rounded border border-slate-200 bg-slate-50 p-2">
+                {previewItem.imageUrl ? (
+                  <img src={resolveUploadUrl(previewItem.imageUrl)} alt="ingredient" className="h-56 w-full rounded border border-slate-200 bg-white object-contain" />
+                ) : (
+                  <div className="flex h-56 items-center justify-center rounded border border-slate-200 bg-white text-xs text-slate-500">{t('ingredients.columns.image')}: -</div>
+                )}
+              </div>
+              <div className="rounded border border-slate-200 bg-slate-50/60 p-3 text-sm">
+                <div className="divide-y divide-slate-200/80">
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.manufacturer')}:</strong><span>{previewItem.manufacturer || '-'}</span></p>
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.packageUnit')}:</strong><span>{previewItem.packageUnit}</span></p>
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.packageQuantity')}:</strong><span>{previewItem.packageQuantity}</span></p>
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.baseUnit')}:</strong><span>{previewItem.baseUnit}</span></p>
+                  <p className="flex items-center justify-between gap-2 pt-1.5"><strong>{t('ingredients.columns.unitPrice')}:</strong><span className="font-semibold">{formatMoney(previewItem.unitPrice)}</span></p>
+                  <p className="flex items-center justify-between gap-2 pt-1.5"><strong>{t('ingredients.columns.packagePrice')}:</strong><span className="font-semibold">{formatMoney(previewItem.packagePrice)}</span></p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <button type="button" className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-700" onClick={() => setPreviewItem(null)}>{t('recipes.preview.close')}</button>
+            </div>
           </div>
         </div>
       ) : null}

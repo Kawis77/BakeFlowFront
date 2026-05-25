@@ -76,6 +76,8 @@
     },
     "columns": {
       "name": "Nazwa",
+      "manufacturer": "Producent",
+      "image": "Zdjecie",
       "packageUnit": "Jednostka opakowania",
       "packageQuantity": "Ilosc opakowania",
       "packagePrice": "Cena opakowania",
@@ -85,6 +87,7 @@
     },
     "actions": {
       "label": "Zarzadzaj",
+      "view": "Podglad",
       "edit": "Edytuj",
       "delete": "Usun"
     },

@@ -76,6 +76,8 @@
     },
     "columns": {
       "name": "Name",
+      "manufacturer": "Manufacturer",
+      "image": "Image",
       "packageUnit": "Package unit",
       "packageQuantity": "Package qty",
       "packagePrice": "Package price",
@@ -85,6 +87,7 @@
     },
     "actions": {
       "label": "Manage",
+      "view": "View",
       "edit": "Edit",
       "delete": "Delete"
     },

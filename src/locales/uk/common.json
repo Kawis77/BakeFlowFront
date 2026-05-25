@@ -76,6 +76,8 @@
     },
     "columns": {
       "name": "Nazva",
+      "manufacturer": "Vyrobnyk",
+      "image": "Zobrazhennya",
       "packageUnit": "Odyynytsya pakuvannya",
       "packageQuantity": "Kilkist u paketi",
       "packagePrice": "Tsina paketu",
@@ -85,6 +87,7 @@
     },
     "actions": {
       "label": "Keruvaty",
+      "view": "Perehlyad",
       "edit": "Redahuvaty",
       "delete": "Vydalyty"
     },
