@@ -20,6 +20,13 @@
     "reports": "Zvity",
     "settings": "Nalashtuvannya"
   },
+  "units": {
+    "piece": "Sht.",
+    "g": "g",
+    "kg": "kg",
+    "ml": "ml",
+    "l": "l"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -176,6 +183,65 @@
       "add": "Dodaty yarus",
       "remove": "Vydalyty",
       "tierLabel": "Yarus {{number}}"
+    }
+  },
+  "extraItems": {
+    "title": "Dodatkovi elementy",
+    "subtitle": "Keruyte dodatkovymy elementamy, yaki mozhna vklyuchaty u tsinu produktu.",
+    "searchPlaceholder": "Shukaty za nazvoyu dodatku...",
+    "addButton": "Dodaty dodatok",
+    "loading": "Zavantazhennya dodatkiv...",
+    "empty": "Nemaie dodatkiv.",
+    "errors": {
+      "loadFailed": "Ne vdalosya zavantazhyty dodatkovi elementy.",
+      "createFailed": "Ne vdalosya stvoryty dodatkovyy element.",
+      "updateFailed": "Ne vdalosya onovyty dodatkovyy element.",
+      "deleteFailed": "Ne vdalosya vydalyty dodatkovyy element."
+    },
+    "columns": {
+      "name": "Nazva",
+      "manufacturer": "Vyrobnyk",
+      "category": "Kategoriya",
+      "image": "Zobrazhennya",
+      "unit": "Odynytsya",
+      "unitCost": "Vartist za odynytsyu",
+      "status": "Status",
+      "actions": "Diyi"
+    },
+    "categoryOptions": {
+      "base": "Pidkladka",
+      "box": "Korobka",
+      "other": "Inshe"
+    },
+    "actions": {
+      "view": "Perehlyad",
+      "edit": "Redahuvaty",
+      "delete": "Vydalyty"
+    },
+    "values": {
+      "active": "Aktyvnyy",
+      "inactive": "Neaktyvnyy"
+    },
+    "create": {
+      "title": "Dodaty dodatok",
+      "subtitle": "Stvorit dodatkovyy element dlya dobavlen na rivni produktu.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Dodaty",
+      "creating": "Dodavannya..."
+    },
+    "edit": {
+      "title": "Redahuvaty dodatok",
+      "subtitle": "Onovit dani dodatkovoho elementa ta vartist za odynytsyu.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Zberehty zminy",
+      "saving": "Zberezhennya..."
+    },
+    "delete": {
+      "title": "Vydalyty dodatok",
+      "confirm": "Vy vpevneni, shcho khochete vydalyty",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Vydalyty",
+      "deleting": "Vydalennya..."
     }
   },
   "recipes": {

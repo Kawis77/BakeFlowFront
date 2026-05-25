@@ -20,6 +20,13 @@
     "reports": "Reports",
     "settings": "Settings"
   },
+  "units": {
+    "piece": "Piece",
+    "g": "g",
+    "kg": "kg",
+    "ml": "ml",
+    "l": "l"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -176,6 +183,65 @@
       "add": "Add tier",
       "remove": "Remove",
       "tierLabel": "Tier {{number}}"
+    }
+  },
+  "extraItems": {
+    "title": "Extra Items",
+    "subtitle": "Manage add-ons that can be included in product pricing.",
+    "searchPlaceholder": "Search by extra item name...",
+    "addButton": "Add extra item",
+    "loading": "Loading extra items...",
+    "empty": "No extra items found.",
+    "errors": {
+      "loadFailed": "Failed to load extra items.",
+      "createFailed": "Failed to create extra item.",
+      "updateFailed": "Failed to update extra item.",
+      "deleteFailed": "Failed to delete extra item."
+    },
+    "columns": {
+      "name": "Name",
+      "manufacturer": "Manufacturer",
+      "category": "Category",
+      "image": "Image",
+      "unit": "Unit",
+      "unitCost": "Unit cost",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "categoryOptions": {
+      "base": "Cake board",
+      "box": "Box",
+      "other": "Other"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "values": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "create": {
+      "title": "Add extra item",
+      "subtitle": "Create an extra item for product-level additions.",
+      "cancel": "Cancel",
+      "confirmButton": "Create",
+      "creating": "Creating..."
+    },
+    "edit": {
+      "title": "Edit extra item",
+      "subtitle": "Update extra item details and unit cost.",
+      "cancel": "Cancel",
+      "confirmButton": "Save changes",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete extra item",
+      "confirm": "Are you sure you want to delete",
+      "cancel": "Cancel",
+      "confirmButton": "Delete",
+      "deleting": "Deleting..."
     }
   },
   "recipes": {

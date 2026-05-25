@@ -27,6 +27,13 @@ function formatMoney(value) {
   return n.toFixed(2)
 }
 
+function formatUnit(value, t) {
+  if (!value) return '-'
+  const key = `units.${String(value).toLowerCase()}`
+  const translated = t(key)
+  return translated === key ? value : translated
+}
+
 function IngredientsPage() {
   const { t } = useTranslation()
   const [ingredients, setIngredients] = useState([])
@@ -236,10 +243,10 @@ function IngredientsPage() {
                   <tr key={item.id} className="cursor-pointer hover:bg-slate-50/80" onDoubleClick={() => setPreviewItem(item)}>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-800">{item.name}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.manufacturer || '-'}</td>
-                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.packageUnit}</td>
+                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatUnit(item.packageUnit, t)}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.packageQuantity}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatMoney(item.packagePrice)}</td>
-                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{item.baseUnit}</td>
+                    <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatUnit(item.baseUnit, t)}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">{formatMoney(item.unitPrice)}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-sm text-slate-700">
                       <div className="flex items-center gap-2">
@@ -296,7 +303,7 @@ function IngredientsPage() {
                   <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.packageUnit')}</span>
                   <select name="packageUnit" value={editForm.packageUnit} onChange={handleEditChange} className="input-field" required>
                     {unitOptions.map((unit) => (
-                      <option key={unit} value={unit}>{unit}</option>
+                      <option key={unit} value={unit}>{formatUnit(unit, t)}</option>
                     ))}
                   </select>
                 </label>
@@ -410,7 +417,7 @@ function IngredientsPage() {
                   <span className="text-secondary mb-1 block text-sm font-medium">{t('ingredients.columns.packageUnit')}</span>
                   <select name="packageUnit" value={createForm.packageUnit} onChange={handleCreateChange} className="input-field" required>
                     {unitOptions.map((unit) => (
-                      <option key={unit} value={unit}>{unit}</option>
+                      <option key={unit} value={unit}>{formatUnit(unit, t)}</option>
                     ))}
                   </select>
                 </label>
@@ -488,9 +495,9 @@ function IngredientsPage() {
               <div className="rounded border border-slate-200 bg-slate-50/60 p-3 text-sm">
                 <div className="divide-y divide-slate-200/80">
                   <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.manufacturer')}:</strong><span>{previewItem.manufacturer || '-'}</span></p>
-                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.packageUnit')}:</strong><span>{previewItem.packageUnit}</span></p>
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.packageUnit')}:</strong><span>{formatUnit(previewItem.packageUnit, t)}</span></p>
                   <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.packageQuantity')}:</strong><span>{previewItem.packageQuantity}</span></p>
-                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.baseUnit')}:</strong><span>{previewItem.baseUnit}</span></p>
+                  <p className="flex items-center justify-between gap-2 py-1"><strong>{t('ingredients.columns.baseUnit')}:</strong><span>{formatUnit(previewItem.baseUnit, t)}</span></p>
                   <p className="flex items-center justify-between gap-2 pt-1.5"><strong>{t('ingredients.columns.unitPrice')}:</strong><span className="font-semibold">{formatMoney(previewItem.unitPrice)}</span></p>
                   <p className="flex items-center justify-between gap-2 pt-1.5"><strong>{t('ingredients.columns.packagePrice')}:</strong><span className="font-semibold">{formatMoney(previewItem.packagePrice)}</span></p>
                 </div>

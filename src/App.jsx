@@ -8,6 +8,7 @@ import IngredientsPage from './pages/IngredientsPage'
 import RecipesPage from './pages/RecipesPage'
 import ComponentsPage from './pages/ComponentsPage'
 import ProductsPage from './pages/ProductsPage'
+import ExtraItemsPage from './pages/ExtraItemsPage'
 
 function hasAccessToken() {
   return Boolean(localStorage.getItem('accessToken'))
@@ -53,7 +54,7 @@ function App() {
         <Route path="recipes" element={<RecipesPage />} />
         <Route path="components" element={<ComponentsPage />} />
         <Route path="ingredients" element={<IngredientsPage />} />
-        <Route path="extra-items" element={<ModulePlaceholderPage titleKey="nav.extraItems" />} />
+        <Route path="extra-items" element={<ExtraItemsPage />} />
         <Route path="reports" element={<ModulePlaceholderPage titleKey="nav.reports" />} />
         <Route path="settings" element={<ModulePlaceholderPage titleKey="nav.settings" />} />
       </Route>
