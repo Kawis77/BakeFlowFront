@@ -111,6 +111,14 @@ export function updateIngredient(id, payload) {
   return api.put(`/ingredients/${id}`, payload)
 }
 
+export function uploadIngredientImage(id, file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  return api.post(`/ingredients/${id}/image`, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  })
+}
+
 export function getRecipes(type) {
   return api.get('/recipes', {
     params: type ? { type } : undefined,
