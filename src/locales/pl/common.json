@@ -14,6 +14,7 @@
     "orders": "Zamowienia",
     "products": "Produkty",
     "recipes": "Receptury",
+    "components": "Komponenty",
     "ingredients": "Skladniki",
     "extraItems": "Dodatki",
     "reports": "Raporty",
@@ -126,6 +127,10 @@
       "invalidYieldUnit": "Jednostka wydajnosci musi byc PIECE, G lub ML.",
       "singleTierOnly": "Receptura musi byc jednopietrowa. Pietra ustawiaj na poziomie produktu."
     },
+    "validation": {
+      "required": "Pole {{field}} jest wymagane.",
+      "positive": "Pole {{field}} musi byc wieksze od 0."
+    },
     "columns": {
       "name": "Nazwa",
       "category": "Kategoria",
@@ -133,6 +138,7 @@
       "yieldQuantity": "Ilosc wydajnosci",
       "yieldUnit": "Jednostka wydajnosci",
       "difficulty": "Poziom",
+      "shape": "Ksztalt",
       "totalCost": "Koszt calkowity",
       "active": "Aktywna",
       "actions": "Akcje",
@@ -141,13 +147,37 @@
       "description": "Opis",
       "mainImage": "Zdjecie glowne"
     },
+    "categoryOptions": {
+      "cake": "Tort",
+      "dessert": "Deser",
+      "other": "Inne",
+      "pastry": "Ciasto"
+    },
+    "difficultyOptions": {
+      "easy": "Latwy",
+      "medium": "Sredni",
+      "hard": "Trudny"
+    },
+    "shapeOptions": {
+      "round": "Okragly",
+      "square": "Kwadratowy"
+    },
+    "yieldUnitOptions": {
+      "piece": "Szt.",
+      "g": "g",
+      "ml": "ml"
+    },
     "values": {
       "active": "Tak",
       "inactive": "Nie"
     },
     "actions": {
+      "view": "Podglad",
       "edit": "Edytuj",
       "delete": "Usun"
+    },
+    "preview": {
+      "close": "Zamknij"
     },
     "steps": {
       "title": "Kroki",
@@ -205,11 +235,33 @@
       "remove": "Usun",
       "empty": "Brak dodanych skladnikow."
     },
+    "components": {
+      "title": "Komponenty",
+      "addButton": "Dodaj komponent",
+      "searchPlaceholder": "Filtruj receptury po nazwie...",
+      "emptySearch": "Brak receptur pasujacych do filtra.",
+      "selected": "Wybrana receptura",
+      "factor": "Wspolczynnik uzycia",
+      "modeManual": "Wspolczynnik reczny",
+      "modeDiameter": "Auto-przeliczenie po srednicy",
+      "autoScale": "auto-przeliczone",
+      "empty": "Brak dodanych komponentow."
+    },
     "summary": {
-      "title": "Podsumowanie"
+      "title": "Podsumowanie",
+      "componentsSubtotal": "Suma komponentow",
+      "ingredientsSubtotal": "Suma skladnikow"
     },
     "images": {
       "uploading": "Wgrywanie zdjecia..."
     }
+  },
+  "componentsModule": {
+    "title": "Komponenty",
+    "subtitle": "Zdefiniuj dane receptury, a potem przypisz skladniki i kroki.",
+    "searchPlaceholder": "Szukaj po nazwie komponentu...",
+    "addButton": "Dodaj komponent",
+    "loading": "Ladowanie komponentow...",
+    "empty": "Brak receptur komponentowych."
   }
 }

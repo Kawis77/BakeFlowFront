@@ -14,6 +14,7 @@
     "orders": "Pedidos",
     "products": "Productos",
     "recipes": "Recetas",
+    "components": "Componentes",
     "ingredients": "Ingredientes",
     "extraItems": "Extras",
     "reports": "Reportes",
@@ -126,6 +127,10 @@
       "invalidYieldUnit": "La unidad de rendimiento debe ser PIECE, G o ML.",
       "singleTierOnly": "La receta debe ser de un solo nivel. Configura niveles en el producto."
     },
+    "validation": {
+      "required": "El campo {{field}} es obligatorio.",
+      "positive": "El campo {{field}} debe ser mayor que 0."
+    },
     "columns": {
       "name": "Nombre",
       "category": "Categoria",
@@ -133,6 +138,7 @@
       "yieldQuantity": "Cantidad de rendimiento",
       "yieldUnit": "Unidad de rendimiento",
       "difficulty": "Dificultad",
+      "shape": "Forma",
       "totalCost": "Costo total",
       "active": "Activa",
       "actions": "Acciones",
@@ -141,13 +147,37 @@
       "description": "Descripcion",
       "mainImage": "Imagen principal"
     },
+    "categoryOptions": {
+      "cake": "Tarta",
+      "dessert": "Postre",
+      "other": "Otro",
+      "pastry": "Pastel"
+    },
+    "difficultyOptions": {
+      "easy": "Facil",
+      "medium": "Medio",
+      "hard": "Dificil"
+    },
+    "shapeOptions": {
+      "round": "Redondo",
+      "square": "Cuadrado"
+    },
+    "yieldUnitOptions": {
+      "piece": "uds.",
+      "g": "g",
+      "ml": "ml"
+    },
     "values": {
       "active": "Si",
       "inactive": "No"
     },
     "actions": {
+      "view": "Ver",
       "edit": "Editar",
       "delete": "Eliminar"
+    },
+    "preview": {
+      "close": "Cerrar"
     },
     "steps": {
       "title": "Pasos",
@@ -205,11 +235,33 @@
       "remove": "Eliminar",
       "empty": "No hay ingredientes agregados."
     },
+    "components": {
+      "title": "Componentes",
+      "addButton": "Agregar componente",
+      "searchPlaceholder": "Filtrar recetas por nombre...",
+      "emptySearch": "No hay recetas que coincidan con el filtro.",
+      "selected": "Receta seleccionada",
+      "factor": "Factor de uso",
+      "modeManual": "Factor manual",
+      "modeDiameter": "Autoescalar por diametro",
+      "autoScale": "autoescalado",
+      "empty": "No hay componentes agregados."
+    },
     "summary": {
-      "title": "Resumen"
+      "title": "Resumen",
+      "componentsSubtotal": "Subtotal de componentes",
+      "ingredientsSubtotal": "Subtotal de ingredientes"
     },
     "images": {
       "uploading": "Subiendo imagen..."
     }
+  },
+  "componentsModule": {
+    "title": "Componentes",
+    "subtitle": "Gestiona recetas reutilizables como cremas, bizcochos y rellenos.",
+    "searchPlaceholder": "Buscar por nombre del componente...",
+    "addButton": "Agregar receta de componente",
+    "loading": "Cargando componentes...",
+    "empty": "No hay recetas de componentes."
   }
 }

@@ -9,6 +9,7 @@ function AppSidebar() {
     { to: '/orders', label: t('nav.orders') },
     { to: '/products', label: t('nav.products') },
     { to: '/recipes', label: t('nav.recipes') },
+    { to: '/components', label: t('nav.components') },
     { to: '/ingredients', label: t('nav.ingredients') },
     { to: '/extra-items', label: t('nav.extraItems') },
     { to: '/reports', label: t('nav.reports') },
