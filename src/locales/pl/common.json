@@ -113,6 +113,71 @@
       "creating": "Dodawanie..."
     }
   },
+  "products": {
+    "title": "Produkty",
+    "subtitle": "Zarzadzaj produktami sprzedazowymi i rentownoscia.",
+    "searchPlaceholder": "Szukaj po nazwie produktu...",
+    "addButton": "Dodaj produkt",
+    "selectRecipe": "Wybierz recepture",
+    "scaleFactor": "Wspolczynnik skali",
+    "loading": "Ladowanie produktow...",
+    "empty": "Brak produktow.",
+    "errors": {
+      "loadFailed": "Nie udalo sie pobrac produktow.",
+      "createFailed": "Nie udalo sie dodac produktu.",
+      "updateFailed": "Nie udalo sie zaktualizowac produktu.",
+      "deleteFailed": "Nie udalo sie usunac produktu."
+    },
+    "columns": {
+      "name": "Nazwa",
+      "recipe": "Receptura",
+      "targetDiameter": "Docelowa srednica (cm)",
+      "sellingPrice": "Cena sprzedazy",
+      "productionCost": "Koszt produkcji",
+      "profit": "Zysk",
+      "margin": "Marza",
+      "status": "Status",
+      "description": "Opis",
+      "image": "Zdjecie",
+      "actions": "Akcje"
+    },
+    "actions": {
+      "view": "Podglad",
+      "edit": "Edytuj",
+      "delete": "Usun"
+    },
+    "values": {
+      "active": "Aktywny",
+      "inactive": "Nieaktywny"
+    },
+    "create": {
+      "title": "Dodaj produkt",
+      "subtitle": "Utworz produkt sprzedazowy i podlacz recepture.",
+      "cancel": "Anuluj",
+      "confirmButton": "Dodaj",
+      "creating": "Dodawanie..."
+    },
+    "edit": {
+      "title": "Edytuj produkt",
+      "subtitle": "Zaktualizuj dane produktu i cene.",
+      "cancel": "Anuluj",
+      "confirmButton": "Zapisz zmiany",
+      "saving": "Zapisywanie..."
+    },
+    "delete": {
+      "title": "Usun produkt",
+      "confirm": "Czy na pewno chcesz usunac",
+      "cancel": "Anuluj",
+      "confirmButton": "Usun",
+      "deleting": "Usuwanie..."
+    },
+    "tiers": {
+      "title": "Pietra",
+      "add": "Dodaj pietro",
+      "remove": "Usun",
+      "tierLabel": "Pietro {{number}}"
+    }
+  },
   "recipes": {
     "title": "Receptury",
     "subtitle": "Zarzadzaj katalogiem receptur, wydajnoscia i bazowymi kosztami.",
@@ -128,7 +193,8 @@
       "stepFailed": "Nie udalo sie zaktualizowac krokow receptury.",
       "unitCategoryMismatch": "Wybrana jednostka nie pasuje do kategorii jednostki skladnika.",
       "invalidYieldUnit": "Jednostka wydajnosci musi byc PIECE, G lub ML.",
-      "singleTierOnly": "Receptura musi byc jednopietrowa. Pietra ustawiaj na poziomie produktu."
+      "singleTierOnly": "Receptura musi byc jednopietrowa. Pietra ustawiaj na poziomie produktu.",
+      "deleteBlockedByComponent": "Nie mozna usunac tej receptury, poniewaz jest uzywana jako komponent w innej recepturze."
     },
     "validation": {
       "required": "Pole {{field}} jest wymagane.",

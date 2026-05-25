@@ -68,6 +68,9 @@ function mapApiErrorToI18nKey(message) {
   if (message.includes('Recipe category LAYER_CAKE is not allowed')) {
     return 'recipes.errors.singleTierOnly'
   }
+  if (message.includes('Recipe is used as a component in another recipe and cannot be deleted')) {
+    return 'recipes.errors.deleteBlockedByComponent'
+  }
   return null
 }
 
@@ -197,6 +200,13 @@ function formatYieldUnit(value, t) {
   const key = `recipes.yieldUnitOptions.${String(value).toLowerCase()}`
   const translated = t(key)
   return translated === key ? value : translated
+}
+
+function formatIngredientDisplayName(ingredient) {
+  if (!ingredient) return ''
+  const name = ingredient.name || ingredient.ingredientName || ''
+  const manufacturer = ingredient.manufacturer || ingredient.ingredientManufacturer || ''
+  return manufacturer ? `${name} (${manufacturer})` : name
 }
 
 function formatQuantity(value) {
@@ -604,7 +614,8 @@ function RecipesPage({ recipeType = 'FINAL', moduleKey = 'recipes' }) {
       setDeleteItem(null)
       await loadRecipes()
     } catch (err) {
-      setError(err?.response?.data?.message ?? t('recipes.errors.deleteFailed'))
+      const raw = err?.response?.data?.message
+      setError(formatRecipeApiError(raw, t) ?? t('recipes.errors.deleteFailed'))
     } finally {
       setIsDeleting(false)
     }
@@ -1038,7 +1049,11 @@ function IngredientBuilder({ ingredients, ingredientCatalog, onAdd, onRemove, t 
   const [query, setQuery] = useState('')
   const [draft, setDraft] = useState(newIngredient)
 
-  const filteredCatalog = ingredientCatalog.filter((item) => item.name?.toLowerCase().includes(query.trim().toLowerCase()))
+  const filteredCatalog = ingredientCatalog.filter((item) => {
+    const q = query.trim().toLowerCase()
+    if (!q) return true
+    return (item.name || '').toLowerCase().includes(q) || (item.manufacturer || '').toLowerCase().includes(q)
+  })
 
   const openAdd = () => {
     setDraft(newIngredient)
@@ -1051,7 +1066,10 @@ function IngredientBuilder({ ingredients, ingredientCatalog, onAdd, onRemove, t 
     setModalOpen(false)
   }
 
-  const resolveCreateIngredientName = (item) => ingredientCatalog.find((ing) => ing.id === item.ingredientId)?.name || item.ingredientId
+  const resolveCreateIngredientName = (item) => {
+    const full = ingredientCatalog.find((ing) => ing.id === item.ingredientId)
+    return formatIngredientDisplayName(full) || item.ingredientId
+  }
 
   return (
     <div className="rounded-md border border-slate-200 p-3">
@@ -1391,7 +1409,7 @@ function RecipePreviewModal({ item, componentCatalog = [], onClose, t, scaleFact
               <ul className="mt-2 space-y-1">
                 {item.ingredients.map((ing, idx) => (
                   <li key={`${ing.ingredientId}-${idx}`} className="flex items-center justify-between rounded bg-slate-50 px-2 py-1 text-xs">
-                    <span className="truncate text-slate-700">{ing.ingredientName || ing.ingredientId} • {formatQuantity(Number(ing.quantity || 0) * normalizedScaleFactor)} {ing.unit}{ing.notes ? ` • ${ing.notes}` : ''}</span>
+                    <span className="truncate text-slate-700">{formatIngredientDisplayName(ing) || ing.ingredientId} • {formatQuantity(Number(ing.quantity || 0) * normalizedScaleFactor)} {ing.unit}{ing.notes ? ` • ${ing.notes}` : ''}</span>
                     <span className="whitespace-nowrap font-medium text-slate-800">{(Number(ing.cost || 0) * normalizedScaleFactor).toFixed(2)}</span>
                   </li>
                 ))}
@@ -1527,7 +1545,7 @@ function IngredientEditor({ ingredients, ingredientCatalog, onAdd, onRemove, t }
         <ul className="space-y-1">
           {ingredients.map((item) => (
             <li key={item.ingredientId} className="flex items-center justify-between rounded bg-slate-50 px-2 py-1 text-xs">
-              <span>{item.ingredientName} • {item.quantity} {item.unit}{item.notes ? ` • ${item.notes}` : ''}</span>
+              <span>{formatIngredientDisplayName(item)} • {item.quantity} {item.unit}{item.notes ? ` • ${item.notes}` : ''}</span>
               <button type="button" className="text-red-600" onClick={() => onRemove(item.ingredientId)}>{t('recipes.ingredients.remove')}</button>
             </li>
           ))}
@@ -1554,7 +1572,7 @@ function IngredientEditor({ ingredients, ingredientCatalog, onAdd, onRemove, t }
 
 function IngredientPickerModal({ title, draft, setDraft, query, setQuery, ingredientCatalog, filteredCatalog, onCancel, onSave, t }) {
   const selectedId = String(draft.ingredientId || '')
-  const selectedIngredientName = ingredientCatalog.find((item) => String(item.id) === selectedId)?.name || ''
+  const selectedIngredientName = formatIngredientDisplayName(ingredientCatalog.find((item) => String(item.id) === selectedId)) || ''
 
   const handlePickIngredient = (item) => {
     const baseUnit = item?.baseUnit
@@ -1582,7 +1600,7 @@ function IngredientPickerModal({ title, draft, setDraft, query, setQuery, ingred
                   className={`flex cursor-pointer items-center justify-between px-3 py-2 text-sm transition ${selectedId === String(item.id) ? 'bg-sky-50' : 'hover:bg-slate-50'}`}
                   onClick={() => handlePickIngredient(item)}
                 >
-                  <span className="flex-1 text-left text-slate-700">{item.name}</span>
+                  <span className="flex-1 text-left text-slate-700">{formatIngredientDisplayName(item)}</span>
                   {selectedId === String(item.id) ? (
                     <span className="text-xs font-semibold text-sky-700">{t('recipes.ingredients.selected')}</span>
                   ) : (

@@ -113,6 +113,71 @@
       "creating": "Stvorennya..."
     }
   },
+  "products": {
+    "title": "Produkty",
+    "subtitle": "Keruyte produktamy dlya prodazhu ta rentabelnistyu.",
+    "searchPlaceholder": "Shukaty za nazvoyu produktu...",
+    "addButton": "Dodaty produkt",
+    "selectRecipe": "Obraty retsept",
+    "scaleFactor": "Koeffitsiyent masshtabu",
+    "loading": "Zavantazhennya produktiv...",
+    "empty": "Nemaie produktiv.",
+    "errors": {
+      "loadFailed": "Ne vdalosya zavantazhyty produkty.",
+      "createFailed": "Ne vdalosya stvoryty produkt.",
+      "updateFailed": "Ne vdalosya onovyty produkt.",
+      "deleteFailed": "Ne vdalosya vydalyty produkt."
+    },
+    "columns": {
+      "name": "Nazva",
+      "recipe": "Retsept",
+      "targetDiameter": "Tsilovyy diametr (sm)",
+      "sellingPrice": "Tsina prodazhu",
+      "productionCost": "Sobivartist",
+      "profit": "Prybutok",
+      "margin": "Marzha",
+      "status": "Status",
+      "description": "Opys",
+      "image": "Zobrazhennya",
+      "actions": "Diyi"
+    },
+    "actions": {
+      "view": "Perehlyad",
+      "edit": "Redahuvaty",
+      "delete": "Vydalyty"
+    },
+    "values": {
+      "active": "Aktyvnyy",
+      "inactive": "Neaktyvnyy"
+    },
+    "create": {
+      "title": "Dodaty produkt",
+      "subtitle": "Stvorit produkt dlya prodazhu ta pryvyazhit retsept.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Dodaty",
+      "creating": "Dodavannya..."
+    },
+    "edit": {
+      "title": "Redahuvaty produkt",
+      "subtitle": "Onovit dani produktu ta tsinu.",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Zberehty zminy",
+      "saving": "Zberezhennya..."
+    },
+    "delete": {
+      "title": "Vydalyty produkt",
+      "confirm": "Vy vpevneni, shcho khochete vydalyty",
+      "cancel": "Skasuvaty",
+      "confirmButton": "Vydalyty",
+      "deleting": "Vydalennya..."
+    },
+    "tiers": {
+      "title": "Yarusy",
+      "add": "Dodaty yarus",
+      "remove": "Vydalyty",
+      "tierLabel": "Yarus {{number}}"
+    }
+  },
   "recipes": {
     "title": "Retsepty",
     "subtitle": "Keruyte katalogom retseptiv, vykhodom ta bazovymy vytratamy.",
@@ -128,7 +193,8 @@
       "stepFailed": "Ne vdalosya onovyty kroky retseptu.",
       "unitCategoryMismatch": "Obrana odynytsya ne vidpovidaye kategoriyi odynytsi ingrediyenta.",
       "invalidYieldUnit": "Odynytsya vykhodu maye buty PIECE, G abo ML.",
-      "singleTierOnly": "Retsept maye buty odnopovarkhovym. Rivni nalashtovuyte na rivni produktu."
+      "singleTierOnly": "Retsept maye buty odnopovarkhovym. Rivni nalashtovuyte na rivni produktu.",
+      "deleteBlockedByComponent": "Nemozhlyvo vydalyty tsey retsept, oskilky vin vykorystovuyetsya yak komponent v inshomu retsepti."
     },
     "validation": {
       "required": "Pole {{field}} obovyazkove.",
