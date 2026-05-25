@@ -202,6 +202,13 @@ function formatYieldUnit(value, t) {
   return translated === key ? value : translated
 }
 
+function formatUnit(value, t) {
+  if (!value) return '-'
+  const key = `units.${String(value).toLowerCase()}`
+  const translated = t(key)
+  return translated === key ? value : translated
+}
+
 function formatIngredientDisplayName(ingredient) {
   if (!ingredient) return ''
   const name = ingredient.name || ingredient.ingredientName || ''
@@ -1081,7 +1088,7 @@ function IngredientBuilder({ ingredients, ingredientCatalog, onAdd, onRemove, t 
         <ul className="space-y-1">
           {ingredients.map((item, idx) => (
             <li key={`${item.ingredientId}-${idx}`} className="flex items-center justify-between rounded bg-slate-50 px-2 py-1 text-xs">
-              <span>{resolveCreateIngredientName(item)} • {item.quantity} {item.unit}{item.notes ? ` • ${item.notes}` : ''}</span>
+              <span>{resolveCreateIngredientName(item)} • {item.quantity} {formatUnit(item.unit, t)}{item.notes ? ` • ${item.notes}` : ''}</span>
               <button type="button" className="text-red-600" onClick={() => onRemove(idx)}>{t('recipes.ingredients.remove')}</button>
             </li>
           ))}
@@ -1189,7 +1196,7 @@ function RecipeSummary({ form, ingredients, components, steps, ingredientCatalog
           <ul className="mt-1 space-y-1">
             {ingredientRows.map((row) => (
               <li key={row.key} className="flex items-center justify-between gap-3 rounded bg-white px-2 py-1">
-                <span className="truncate text-slate-700">{row.name} • {row.quantity} {row.unit}{row.notes ? ` • ${row.notes}` : ''}</span>
+                <span className="truncate text-slate-700">{row.name} • {row.quantity} {formatUnit(row.unit, t)}{row.notes ? ` • ${row.notes}` : ''}</span>
                 <span className="whitespace-nowrap font-medium text-slate-800">{formatCost(row.cost)}</span>
               </li>
             ))}
@@ -1409,7 +1416,7 @@ function RecipePreviewModal({ item, componentCatalog = [], onClose, t, scaleFact
               <ul className="mt-2 space-y-1">
                 {item.ingredients.map((ing, idx) => (
                   <li key={`${ing.ingredientId}-${idx}`} className="flex items-center justify-between rounded bg-slate-50 px-2 py-1 text-xs">
-                    <span className="truncate text-slate-700">{formatIngredientDisplayName(ing) || ing.ingredientId} • {formatQuantity(Number(ing.quantity || 0) * normalizedScaleFactor)} {ing.unit}{ing.notes ? ` • ${ing.notes}` : ''}</span>
+                    <span className="truncate text-slate-700">{formatIngredientDisplayName(ing) || ing.ingredientId} • {formatQuantity(Number(ing.quantity || 0) * normalizedScaleFactor)} {formatUnit(ing.unit, t)}{ing.notes ? ` • ${ing.notes}` : ''}</span>
                     <span className="whitespace-nowrap font-medium text-slate-800">{(Number(ing.cost || 0) * normalizedScaleFactor).toFixed(2)}</span>
                   </li>
                 ))}
@@ -1545,7 +1552,7 @@ function IngredientEditor({ ingredients, ingredientCatalog, onAdd, onRemove, t }
         <ul className="space-y-1">
           {ingredients.map((item) => (
             <li key={item.ingredientId} className="flex items-center justify-between rounded bg-slate-50 px-2 py-1 text-xs">
-              <span>{formatIngredientDisplayName(item)} • {item.quantity} {item.unit}{item.notes ? ` • ${item.notes}` : ''}</span>
+              <span>{formatIngredientDisplayName(item)} • {item.quantity} {formatUnit(item.unit, t)}{item.notes ? ` • ${item.notes}` : ''}</span>
               <button type="button" className="text-red-600" onClick={() => onRemove(item.ingredientId)}>{t('recipes.ingredients.remove')}</button>
             </li>
           ))}
@@ -1614,7 +1621,7 @@ function IngredientPickerModal({ title, draft, setDraft, query, setQuery, ingred
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-[1fr_110px_1fr]">
           <input className="input-field" value={selectedIngredientName} readOnly placeholder={t('recipes.ingredients.selected')} />
           <select className="input-field" value={draft.unit} onChange={(e) => setDraft((p) => ({ ...p, unit: e.target.value }))}>
-            {ingredientUnitOptions.map((u) => <option key={u} value={u}>{u}</option>)}
+            {ingredientUnitOptions.map((u) => <option key={u} value={u}>{formatUnit(u, t)}</option>)}
           </select>
           <input className="input-field" type="number" step="0.001" min="0.001" value={draft.quantity} onChange={(e) => setDraft((p) => ({ ...p, quantity: e.target.value }))} placeholder={t('recipes.ingredients.quantity')} />
         </div>

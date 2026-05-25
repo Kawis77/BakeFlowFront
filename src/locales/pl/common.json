@@ -20,6 +20,13 @@
     "reports": "Raporty",
     "settings": "Ustawienia"
   },
+  "units": {
+    "piece": "Szt.",
+    "g": "g",
+    "kg": "kg",
+    "ml": "ml",
+    "l": "l"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -176,6 +183,65 @@
       "add": "Dodaj pietro",
       "remove": "Usun",
       "tierLabel": "Pietro {{number}}"
+    }
+  },
+  "extraItems": {
+    "title": "Dodatki",
+    "subtitle": "Zarzadzaj dodatkami doliczanymi do ceny produktu.",
+    "searchPlaceholder": "Szukaj po nazwie dodatku...",
+    "addButton": "Dodaj dodatek",
+    "loading": "Ladowanie dodatkow...",
+    "empty": "Brak dodatkow.",
+    "errors": {
+      "loadFailed": "Nie udalo sie pobrac dodatkow.",
+      "createFailed": "Nie udalo sie dodac dodatku.",
+      "updateFailed": "Nie udalo sie zaktualizowac dodatku.",
+      "deleteFailed": "Nie udalo sie usunac dodatku."
+    },
+    "columns": {
+      "name": "Nazwa",
+      "manufacturer": "Producent",
+      "category": "Kategoria",
+      "image": "Zdjecie",
+      "unit": "Jednostka",
+      "unitCost": "Koszt jednostkowy",
+      "status": "Status",
+      "actions": "Akcje"
+    },
+    "categoryOptions": {
+      "base": "Podklad",
+      "box": "Pudelko",
+      "other": "Inne"
+    },
+    "actions": {
+      "view": "Podglad",
+      "edit": "Edytuj",
+      "delete": "Usun"
+    },
+    "values": {
+      "active": "Aktywny",
+      "inactive": "Nieaktywny"
+    },
+    "create": {
+      "title": "Dodaj dodatek",
+      "subtitle": "Utworz dodatek do doliczen na poziomie produktu.",
+      "cancel": "Anuluj",
+      "confirmButton": "Dodaj",
+      "creating": "Dodawanie..."
+    },
+    "edit": {
+      "title": "Edytuj dodatek",
+      "subtitle": "Zaktualizuj dane dodatku i koszt jednostkowy.",
+      "cancel": "Anuluj",
+      "confirmButton": "Zapisz zmiany",
+      "saving": "Zapisywanie..."
+    },
+    "delete": {
+      "title": "Usun dodatek",
+      "confirm": "Czy na pewno chcesz usunac",
+      "cancel": "Anuluj",
+      "confirmButton": "Usun",
+      "deleting": "Usuwanie..."
     }
   },
   "recipes": {

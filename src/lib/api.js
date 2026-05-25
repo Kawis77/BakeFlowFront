@@ -209,4 +209,28 @@ export function uploadProductImage(id, file) {
   })
 }
 
+export function getExtraItems() {
+  return api.get('/extra-items')
+}
+
+export function createExtraItem(payload) {
+  return api.post('/extra-items', payload)
+}
+
+export function updateExtraItem(id, payload) {
+  return api.put(`/extra-items/${id}`, payload)
+}
+
+export function deleteExtraItem(id) {
+  return api.delete(`/extra-items/${id}`)
+}
+
+export function uploadExtraItemImage(id, file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  return api.post(`/extra-items/${id}/image`, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  })
+}
+
 export default api

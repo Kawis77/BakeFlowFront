@@ -20,6 +20,13 @@
     "reports": "Reportes",
     "settings": "Configuracion"
   },
+  "units": {
+    "piece": "Pza.",
+    "g": "g",
+    "kg": "kg",
+    "ml": "ml",
+    "l": "l"
+  },
   "auth": {
     "register": {
       "badge": "BakeFlow",
@@ -176,6 +183,65 @@
       "add": "Agregar piso",
       "remove": "Eliminar",
       "tierLabel": "Piso {{number}}"
+    }
+  },
+  "extraItems": {
+    "title": "Extras",
+    "subtitle": "Gestiona extras que se pueden incluir en el precio del producto.",
+    "searchPlaceholder": "Buscar por nombre del extra...",
+    "addButton": "Agregar extra",
+    "loading": "Cargando extras...",
+    "empty": "No hay extras.",
+    "errors": {
+      "loadFailed": "No se pudieron cargar los extras.",
+      "createFailed": "No se pudo crear el extra.",
+      "updateFailed": "No se pudo actualizar el extra.",
+      "deleteFailed": "No se pudo eliminar el extra."
+    },
+    "columns": {
+      "name": "Nombre",
+      "manufacturer": "Fabricante",
+      "category": "Categoria",
+      "image": "Imagen",
+      "unit": "Unidad",
+      "unitCost": "Costo por unidad",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "categoryOptions": {
+      "base": "Base",
+      "box": "Caja",
+      "other": "Otros"
+    },
+    "actions": {
+      "view": "Ver",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "values": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "create": {
+      "title": "Agregar extra",
+      "subtitle": "Crea un extra para adiciones a nivel de producto.",
+      "cancel": "Cancelar",
+      "confirmButton": "Crear",
+      "creating": "Creando..."
+    },
+    "edit": {
+      "title": "Editar extra",
+      "subtitle": "Actualiza datos del extra y su costo por unidad.",
+      "cancel": "Cancelar",
+      "confirmButton": "Guardar cambios",
+      "saving": "Guardando..."
+    },
+    "delete": {
+      "title": "Eliminar extra",
+      "confirm": "Seguro que deseas eliminar",
+      "cancel": "Cancelar",
+      "confirmButton": "Eliminar",
+      "deleting": "Eliminando..."
     }
   },
   "recipes": {
